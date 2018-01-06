@@ -1,5 +1,9 @@
 ;; -*- emacs-lisp -*-
 
+(defun try-require (name)
+  "Try to require a package.  Returns t on success and nil on failure"
+  (not (null (require name (symbol-name name) t))))
+
 ;; Set up identity correctly.
 (setq user-full-name "Alex Malyshev")
 (setq user-mail-address "lex.malyshev@gmail.com")
@@ -106,7 +110,7 @@
 (global-whitespace-mode t)
 
 ;; Print line comment from current column to fill-column.
-(require 's)
+(try-require 's)
 (defun print-delim ()
   (interactive)
   (let ((size (- fill-column (current-column)))
