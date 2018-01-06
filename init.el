@@ -1,5 +1,3 @@
-;; -*- emacs-lisp -*-
-
 (defun try-require (name)
   "Try to require a package.  Returns t on success and nil on failure"
   (not (null (require name (symbol-name name) t))))
