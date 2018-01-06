@@ -65,6 +65,9 @@
 ;; Enable sub-words.
 (global-subword-mode 1)
 
+(when (fboundp 'global-flycheck-mode)
+  (global-flycheck-mode))
+
 ;; Default to 2 space indent and replace tabs with spaces.
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
