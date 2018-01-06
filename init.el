@@ -121,10 +121,5 @@
 ;; Shortcut for sorting lines.
 (global-set-key (kbd "C-c s") 'sort-lines)
 
-;; Shortcuts for clang formatting.
-(add-hook 'c++-mode-hook
-          (lambda () (local-set-key (kbd "C-c r")
-          'clang-format-region)))
-(add-hook 'c++-mode-hook
-          (lambda () (local-set-key (kbd "C-c b")
-          'clang-format-buffer)))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
+(require 'init-c++)
