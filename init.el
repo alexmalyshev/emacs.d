@@ -1,5 +1,9 @@
+;;; package --- Init script.
+;;; Commentary:
+;;; Code:
+
 (defun try-require (name)
-  "Try to require a package.  Returns t on success and nil on failure"
+  "Try to require a package called NAME.  Return t/nil success status."
   (not (null (require name (symbol-name name) t))))
 
 ;; Set up identity correctly.
@@ -36,13 +40,14 @@
 (setq echo-keystrokes 0.1)
 
 ;; Always show matching parens/braces/brackets, and speed them up too.
-(setq show-paren-delay 0)
+(defvar show-paren-delay 0)
 (show-paren-mode t)
 
-;; Emacs gets confused as to what color some terminals are.  Manually set the
-;; graphical emacs to light, because it has a white screen, but all the
-;; terminals I use have black backgrounds so set them to dark.
 (defun better-frame-background (frame)
+  "Emacs gets confused as to what color some terminals are.
+Manually set the graphical Emacs to light, because it has a white
+screen, but all the terminals I use have black backgrounds so set
+them to dark.  FRAME is passed to 'frame-set-background-mode'."
   (let ((frame-background-mode (if (display-graphic-p) 'light 'dark)))
     (frame-set-background-mode frame)))
 
@@ -74,12 +79,12 @@
 (setq-default fill-column 80)
 
 ;; Language specific indent levels.
-(setq js-indent-level 2)
-(setq lua-indent-level 2)
-(setq rust-indent-offset 2)
-(add-hook 'php-mode-hook (lambda () (setq c-basic-offset 2)))
-(setq sh-basic-offset 2)
-(setq sh-indentation 2)
+(defvar js-indent-level 2)
+(defvar lua-indent-level 2)
+(defvar rust-indent-offset 2)
+(add-hook 'php-mode-hook (lambda () (defvar c-basic-offset 2)))
+(defvar sh-basic-offset 2)
+(defvar sh-indentation 2)
 
 ;; Haskell mode makes us enable indentation manually.
 (add-hook 'haskell-mode-hook 'haskell-indentation-hook)
@@ -102,17 +107,13 @@
 (setq whitespace-style '(face lines-tail trailing))
 (global-whitespace-mode t)
 
-;; Print line comment from current column to fill-column.
-(try-require 's)
-(defun print-delim ()
-  (interactive)
-  (let ((size (- fill-column (current-column)))
-        (str (s-repeat fill-column (s-trim comment-start))))
-    (insert (substring str 0 size))))
-(global-set-key (kbd "C-c C-_") 'print-delim)
-
 ;; Shortcut for sorting lines.
 (global-set-key (kbd "C-c s") 'sort-lines)
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
+(defvar flycheck-emacs-lisp-load-path 'inherit)
+
 (require 'init-c++)
+
+(provide 'init)
+;;; init.el ends here

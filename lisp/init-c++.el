@@ -1,4 +1,8 @@
-(setq c-basic-offset 2)
+;;; package --- Init C++ script.
+;;; Commentary:
+;;; Code:
+
+(defvar c-basic-offset 2)
 
 ;; Don't indent on opening a C++ namespace, an extern block, or on case labels.
 (c-set-offset 'inextern-lang 0)
@@ -16,3 +20,4 @@
           'clang-format-buffer)))
 
 (provide 'init-c++)
+;;; init-c++.el ends here
