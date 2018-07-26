@@ -1,4 +1,4 @@
-;;; package --- Init script.
+;;; init.el --- Init script.
 ;;; Commentary:
 ;;; Code:
 
