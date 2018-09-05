@@ -81,10 +81,11 @@ them to dark.  FRAME is passed to 'frame-set-background-mode'."
 ;; Language specific indent levels.
 (defvar js-indent-level 2)
 (defvar lua-indent-level 2)
-(defvar rust-indent-offset 2)
 (add-hook 'php-mode-hook (lambda () (defvar c-basic-offset 2)))
+(defvar rust-indent-offset 2)
 (defvar sh-basic-offset 2)
 (defvar sh-indentation 2)
+(defvar typescript-indent-level 2)
 
 ;; Haskell mode makes us enable indentation manually.
 (add-hook 'haskell-mode-hook 'haskell-indentation-hook)
