@@ -1,4 +1,4 @@
-;;; init.el --- Init script.
+;;; init.el --- Init script.  -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
 
