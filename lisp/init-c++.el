@@ -1,4 +1,4 @@
-;;; init-c++.el --- Configuration for c++-mode.  -*- lexical-binding: t -*-
+;;; init-c++.el --- Configuration for C++.  -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
 

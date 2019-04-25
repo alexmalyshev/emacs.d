@@ -114,6 +114,7 @@ them to dark.  FRAME is passed to 'frame-set-background-mode'."
 (defvar flycheck-emacs-lisp-load-path 'inherit)
 
 (require 'init-c++)
+(require 'init-python)
 (require 'init-rust)
 
 (provide 'init)
