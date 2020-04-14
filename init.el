@@ -99,6 +99,20 @@ them to dark.  FRAME is passed to 'frame-set-background-mode'."
 ;; Replace list-buffers with ibuffer.
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
+(defun better-split-window-below (&optional size)
+  (interactive)
+  (split-window-below size)
+  (balance-windows))
+
+(defun better-split-window-right (&optional size)
+  (interactive)
+  (split-window-right size)
+  (balance-windows))
+
+;; Always rebalance windows after splitting them.
+(global-set-key (kbd "C-x 2") 'better-split-window-below)
+(global-set-key (kbd "C-x 3") 'better-split-window-right)
+
 ;; Treat .h files as C++ files.
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 
