@@ -12,7 +12,7 @@
 
 ;; Add MELPA packages.
 (require 'package)
-(let ((melpa '("melpa" . "http://melpa.milkbox.net/packages/")))
+(let ((melpa '("melpa" . "https://melpa.org/packages/")))
   (add-to-list 'package-archives melpa t))
 (package-initialize)
 
