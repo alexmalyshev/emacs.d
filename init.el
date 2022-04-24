@@ -100,11 +100,15 @@ them to dark.  FRAME is passed to 'frame-set-background-mode'."
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 (defun better-split-window-below (&optional size)
+  "This is a variant of 'split-window-below' that auto-balances windows.
+Passes through the SIZE argument."
   (interactive)
   (split-window-below size)
   (balance-windows))
 
 (defun better-split-window-right (&optional size)
+  "This is a variant of 'split-window-right' that auto-balances windows.
+Passes through the SIZE argument."
   (interactive)
   (split-window-right size)
   (balance-windows))
