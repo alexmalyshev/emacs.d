@@ -2,7 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(defvar rust-indent-offset 2)
+(defvar rust-indent-offset 4)
 
 (defun init-rust--set-format-shortcut ()
   "Set rust-format-buffer keyboard shortcut."
@@ -10,7 +10,8 @@
 
 (defun init-rust--hook ()
   "Stuff to run when entering `rust-mode'."
-  (init-rust--set-format-shortcut))
+  (init-rust--set-format-shortcut)
+  (flycheck-mode -1))
 
 (add-hook 'rust-mode-hook 'init-rust--hook)
 
