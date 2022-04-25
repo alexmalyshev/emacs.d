@@ -124,6 +124,7 @@ Passes through the SIZE argument."
 (require 'whitespace)
 (setq whitespace-style '(face lines-tail trailing))
 (global-whitespace-mode t)
+(setq whitespace-global-modes ())
 
 ;; Shortcut for sorting lines.
 (global-set-key (kbd "C-c s") 'sort-lines)
