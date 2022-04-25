@@ -129,6 +129,9 @@ Passes through the SIZE argument."
 ;; Shortcut for sorting lines.
 (global-set-key (kbd "C-c s") 'sort-lines)
 
+(try-require 'tree-sitter)
+(try-require 'tree-sitter-langs)
+
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
 (defvar flycheck-emacs-lisp-load-path 'inherit)
 
