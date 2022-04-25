@@ -133,6 +133,7 @@ Passes through the SIZE argument."
 (defvar flycheck-emacs-lisp-load-path 'inherit)
 
 (require 'init-c++)
+(require 'init-lua)
 (require 'init-python)
 (require 'init-rust)
 
