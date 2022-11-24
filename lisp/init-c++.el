@@ -16,7 +16,6 @@ Don't indent on opening a C++ namespace, an extern block, or on case labels."
 
 (defun init-c++--set-clang-format-shortcuts ()
   "Set keyboard shortcuts for running clang-format."
-  (local-set-key (kbd "C-c r") 'clang-format-region)
   (local-set-key (kbd "C-c b") 'clang-format-buffer))
 
 (defun init-c++--hook ()

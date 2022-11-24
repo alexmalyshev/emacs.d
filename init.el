@@ -128,6 +128,7 @@ Passes through the SIZE argument."
 
 ;; Shortcut for sorting lines.
 (global-set-key (kbd "C-c s") 'sort-lines)
+(global-set-key (kbd "C-c r") 'revert-buffer)
 
 (try-require 'tree-sitter)
 (try-require 'tree-sitter-langs)
