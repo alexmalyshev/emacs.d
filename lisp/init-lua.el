@@ -2,6 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
+(defvar lua-indent-level 2)
+
 (defun init-lua--hook ()
   "Stuff to run when entering `lua-mode'."
   (add-to-list 'whitespace-global-modes 'lua-mode))

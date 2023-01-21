@@ -84,7 +84,6 @@ them to dark.  FRAME is passed to 'frame-set-background-mode'."
 
 ;; Language specific indent levels.
 (defvar js-indent-level 2)
-(defvar lua-indent-level 2)
 (add-hook 'php-mode-hook (lambda () (defvar c-basic-offset 2)))
 (defvar sh-basic-offset 2)
 (defvar sh-indentation 2)
