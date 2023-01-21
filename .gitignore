@@ -1,3 +1,8 @@
 auto-save-list
 elpa
 eshell
+
+transient
+
+.cache
+.lsp-session-v1
