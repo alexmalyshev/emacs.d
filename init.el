@@ -70,6 +70,10 @@ them to dark.  FRAME is passed to 'frame-set-background-mode'."
 ;; Enable sub-words.
 (global-subword-mode 1)
 
+;; Move customize bits over to dedicated file.
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(load custom-file)
+
 (when (fboundp 'global-flycheck-mode)
   (global-flycheck-mode))
 
