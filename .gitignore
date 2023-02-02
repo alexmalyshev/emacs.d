@@ -2,6 +2,7 @@ auto-save-list
 elpa
 eshell
 
+eln-cache
 transient
 
 .cache
