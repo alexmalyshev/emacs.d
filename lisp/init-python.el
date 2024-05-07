@@ -10,6 +10,8 @@
   "Stuff to run when entering `python-mode'."
   (init-python--set-blacken-shortcut))
 
+(use-package blacken)
+
 (add-hook 'python-mode-hook 'init-python--hook)
 
 (provide 'init-python)

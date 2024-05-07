@@ -13,7 +13,9 @@
   (init-rust--set-format-shortcut)
   (flycheck-mode -1))
 
-(add-hook 'rust-mode-hook 'init-rust--hook)
+(use-package rust-mode
+  :config
+  (add-hook 'rust-mode-hook 'init-rust--hook))
 
 (provide 'init-rust)
 ;;; init-rust.el ends here

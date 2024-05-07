@@ -2,8 +2,10 @@
 ;;; Commentary:
 ;;; Code:
 
-;; Haskell mode makes us enable indentation manually.
-(add-hook 'haskell-mode-hook 'haskell-indentation-hook)
+(use-package haskell-mode
+  :config
+  ;; Haskell mode makes us enable indentation manually.
+  (add-hook 'haskell-mode-hook 'haskell-indentation-hook))
 
 (provide 'init-haskell)
 ;;; init-haskell.el ends here

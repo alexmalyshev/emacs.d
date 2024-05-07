@@ -2,10 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-(defun try-require (name)
-  "Try to require a package called NAME.  Return t/nil success status."
-  (not (null (require name (symbol-name name) t))))
-
 ;; Set up identity correctly.
 (setq user-full-name "Alex Malyshev")
 (setq user-mail-address "lex.malyshev@gmail.com")
@@ -15,6 +11,11 @@
 (let ((melpa '("melpa" . "https://melpa.org/packages/")))
   (add-to-list 'package-archives melpa t))
 (package-initialize)
+
+;; Auto-install packages by default.  Auto-defer package loading by default.
+(require 'use-package-ensure)
+(setq use-package-always-defer t)
+(setq use-package-always-ensure t)
 
 ;; Default buffer is an empty file in org-mode.
 (setq inhibit-splash-screen t)
@@ -81,13 +82,8 @@ them to dark.  FRAME is passed to 'frame-set-background-mode'."
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
 (setq-default fill-column 80)
-
-;; Language specific indent levels.
-(defvar js-indent-level 2)
-(add-hook 'php-mode-hook (lambda () (defvar c-basic-offset 2)))
 (defvar sh-basic-offset 2)
 (defvar sh-indentation 2)
-(defvar typescript-indent-level 2)
 
 ;; Kill all trailing whitespace upon saving files.
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
@@ -130,8 +126,36 @@ Passes through the SIZE argument."
 (global-set-key (kbd "C-c s") 'sort-lines)
 (global-set-key (kbd "C-c r") 'revert-buffer)
 
-(try-require 'tree-sitter)
-(try-require 'tree-sitter-langs)
+;; Assorted package imports without much configuration.
+(use-package csharp-mode)
+(use-package erlang)
+(use-package fsharp-mode)
+(use-package go-mode)
+(use-package ini-mode)
+(use-package js2-mode
+  :config
+  (defvar js-indent-level 2))
+(use-package json-mode)
+(use-package kotlin-mode)
+(use-package markdown-mode)
+(use-package meson-mode)
+(use-package nasm-mode)
+(use-package nix-mode)
+(use-package php-mode
+  :config
+  (add-hook 'php-mode-hook (lambda () (defvar c-basic-offset 2))))
+(use-package protobuf-mode)
+(use-package sml-mode)
+(use-package systemd)
+(use-package thrift)
+(use-package tmux-mode)
+(use-package tree-sitter)
+(use-package tree-sitter-langs)
+(use-package tuareg)
+(use-package typescript-mode
+  :config
+  (defvar typescript-indent-level 2))
+(use-package yaml-mode)
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
 (defvar flycheck-emacs-lisp-load-path 'inherit)

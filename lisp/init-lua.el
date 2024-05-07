@@ -8,11 +8,12 @@
   "Stuff to run when entering `lua-mode'."
   (add-to-list 'whitespace-global-modes 'lua-mode))
 
-(if (try-require 'lua-mode)
-    (add-hook 'lua-mode-hook 'init-lua--hook))
+(use-package lsp-mode)
 
-(if (try-require 'lsp-mode)
-    (add-hook 'lua-mode-hook 'lsp))
+(use-package lua-mode
+  :config
+  (add-hook 'lua-mode-hook 'init-lua--hook)
+  (add-hook 'lua-mode-hook 'lsp))
 
 (provide 'init-lua)
 ;;; init-lua.el ends here
