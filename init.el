@@ -129,13 +129,16 @@ Passes through the SIZE argument."
 ;; Assorted package imports without much configuration.
 (use-package csharp-mode)
 (use-package erlang)
+(use-package fish-mode)
 (use-package fsharp-mode)
 (use-package go-mode)
+(use-package hack-mode)
 (use-package ini-mode)
 (use-package js2-mode
   :config
   (defvar js-indent-level 2))
 (use-package json-mode)
+(use-package just-mode)
 (use-package kotlin-mode)
 (use-package markdown-mode)
 (use-package meson-mode)
@@ -145,7 +148,9 @@ Passes through the SIZE argument."
   :config
   (add-hook 'php-mode-hook (lambda () (defvar c-basic-offset 2))))
 (use-package protobuf-mode)
+(use-package scala-mode)
 (use-package sml-mode)
+(use-package swift-mode)
 (use-package systemd)
 (use-package thrift)
 (use-package tmux-mode)

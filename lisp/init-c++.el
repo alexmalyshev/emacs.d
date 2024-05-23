@@ -18,6 +18,8 @@ Don't indent on opening a C++ namespace, an extern block, or on case labels."
   "Set keyboard shortcuts for running clang-format."
   (local-set-key (kbd "C-c b") 'clang-format-buffer))
 
+(use-package clang-format)
+
 (defun init-c++--hook ()
   "Stuff to run when entering `c++-mode'."
   (init-c++--set-c++-offsets)
