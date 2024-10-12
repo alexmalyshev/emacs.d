@@ -88,10 +88,6 @@ them to dark.  FRAME is passed to 'frame-set-background-mode'."
 ;; Kill all trailing whitespace upon saving files.
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-;; Use C-w for killing words like bash does, and move kill-region to C-q.
-(global-set-key (kbd "C-w") 'backward-kill-word)
-(global-set-key (kbd "C-q") 'kill-region)
-
 ;; Replace list-buffers with ibuffer.
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
