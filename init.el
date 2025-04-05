@@ -75,9 +75,6 @@ them to dark.  FRAME is passed to 'frame-set-background-mode'."
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
 
-(when (fboundp 'global-flycheck-mode)
-  (global-flycheck-mode))
-
 ;; Default to 2 space indent and replace tabs with spaces.
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
@@ -123,6 +120,7 @@ Passes through the SIZE argument."
 (global-set-key (kbd "C-c r") 'revert-buffer)
 
 ;; Assorted package imports without much configuration.
+(use-package company)
 (use-package csharp-mode)
 (use-package erlang)
 (use-package fish-mode)
@@ -136,6 +134,10 @@ Passes through the SIZE argument."
 (use-package json-mode)
 (use-package just-mode)
 (use-package kotlin-mode)
+(use-package lsp-mode
+  :config
+  (setq lsp-keymap-prefix "C-c l")
+  (define-key lsp-mode-map (kbd "C-c l") lsp-command-map))
 (use-package markdown-mode)
 (use-package meson-mode)
 (use-package nasm-mode)
