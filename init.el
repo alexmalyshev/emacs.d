@@ -138,8 +138,9 @@ Passes through the SIZE argument."
 (use-package just-mode)
 (use-package kotlin-mode)
 (use-package lsp-mode
-  :config
+  :init
   (setq lsp-keymap-prefix "C-c l")
+  :config
   (define-key lsp-mode-map (kbd "C-c l") lsp-command-map))
 (use-package markdown-mode)
 (use-package meson-mode)
