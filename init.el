@@ -124,6 +124,9 @@ Passes through the SIZE argument."
 (use-package csharp-mode)
 (use-package erlang)
 (use-package fish-mode)
+(use-package flycheck
+  :config
+  (setq flycheck-emacs-lisp-load-path 'inherit))
 (use-package fsharp-mode)
 (use-package go-mode)
 (use-package hack-mode)
