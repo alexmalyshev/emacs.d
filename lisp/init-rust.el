@@ -11,7 +11,8 @@
 (defun init-rust--hook ()
   "Stuff to run when entering `rust-mode'."
   (init-rust--set-format-shortcut)
-  (flycheck-mode -1))
+  (flycheck-mode -1)
+  (lsp))
 
 (use-package rust-mode
   :config
