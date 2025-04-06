@@ -164,7 +164,6 @@ Passes through the SIZE argument."
 (use-package yaml-mode)
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
-(defvar flycheck-emacs-lisp-load-path 'inherit)
 
 (require 'init-c++)
 (require 'init-haskell)
