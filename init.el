@@ -119,6 +119,9 @@ Passes through the SIZE argument."
 (global-set-key (kbd "C-c s") 'sort-lines)
 (global-set-key (kbd "C-c r") 'revert-buffer)
 
+;; Disable inlay hints for eglot by default.
+(add-hook 'eglot-managed-mode-hook (lambda () (eglot-inlay-hints-mode -1)))
+
 ;; Assorted package imports without much configuration.
 (use-package company)
 (use-package csharp-mode)
