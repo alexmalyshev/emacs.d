@@ -24,7 +24,7 @@ Don't indent on opening a C++ namespace, an extern block, or on case labels."
   "Stuff to run when entering `c++-mode'."
   (init-c++--set-c++-offsets)
   (init-c++--set-clang-format-shortcuts)
-  (lsp)
+  (eglot-ensure)
   (add-to-list 'whitespace-global-modes 'c++-mode))
 
 (add-hook 'c++-mode-hook 'init-c++--hook)
