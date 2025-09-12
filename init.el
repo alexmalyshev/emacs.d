@@ -73,7 +73,8 @@ them to dark.  FRAME is passed to 'frame-set-background-mode'."
 
 ;; Move customize bits over to dedicated file.
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(load custom-file)
+(if (file-exists-p custom-file)
+    (load custom-file))
 
 ;; Default to 2 space indent and replace tabs with spaces.
 (setq-default indent-tabs-mode nil)

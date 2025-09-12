@@ -7,3 +7,5 @@ transient
 
 .cache
 .lsp-session-v1
+
+custom.el
