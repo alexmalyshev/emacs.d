@@ -124,6 +124,7 @@ Passes through the SIZE argument."
 
 ;; Assorted package imports without much configuration.
 (use-package company)
+(use-package cmake-mode)
 (use-package csharp-mode)
 (use-package erlang)
 (use-package fish-mode)
@@ -153,6 +154,7 @@ Passes through the SIZE argument."
   :config
   (add-hook 'php-mode-hook (lambda () (defvar c-basic-offset 2))))
 (use-package protobuf-mode)
+(use-package python-mode)
 (use-package scala-mode)
 (use-package sml-mode)
 (use-package swift-mode)
